@@ -90,15 +90,24 @@ svg{
   color: #fff;
   background: #F97272;
 }
-.yellowList{
-  display: none;
+.menu-expand {
+  height: 0;
   position: absolute;
+  z-index: 1;
+  top: 1px;
   overflow: auto;
+  padding-top: 20px;
+  border-radius: 1.25rem;
   background: #FCE3A4 !important;
   width: 300px !important;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.yellowList{
+  display: none;
+  /*position: absolute;
+  overflow: auto;*/
   top: 8px;
-  padding-top: 20px;
-  border-radius: 0rem 1.25rem 1.25rem 1.25rem;
   z-index: 1;
 }
 .yellowList li,.pinkList li, .redList li {
@@ -116,6 +125,10 @@ svg{
 .drop_menu:hover .yellowList, .drop_menu:hover .pinkList, .drop_menu:hover .redList{
   display: block;
   animation: menu-open 0.5s normal;
+}
+.drop_menu:hover .menu-expand {
+  opacity: 1;
+  height: 250px;
 }
 .pinkList{
   display: none;
@@ -174,4 +187,16 @@ from {
 to {
   bottom: 1000px;
 }
+}
+@keyframes height-expand {
+  0% {
+    height: 300px;
+  }
+  50% {
+    height: 250px;
+  }
+  100% {
+    height: auto;
+  }
+
 }

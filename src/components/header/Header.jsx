@@ -61,7 +61,7 @@ export function Header() {
             >
               NUEVO
             </button>
-            <div>
+            <div className="menu-expand">
               <ul className="yellowList">
                 {
                   categoryButtons.nuevo.map((item) =>(
@@ -81,7 +81,7 @@ export function Header() {
             >
               ROPITA
             </button>
-            <div>
+            <div className="menu-expand">
               <ul className="yellowList">
                 {
                   categoryButtons.ropita.map((item) =>(
